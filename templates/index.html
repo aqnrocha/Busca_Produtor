@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Buscador de Produtores no Registro Rural</h1>
+    <h2>Digite o nome do Produtor</h2>
+        <form action="resultado" method="POST">
+            <input type="text" name="pesquisa">
+            <button>Buscar</button>
+        </form>
+</body>
+</html>

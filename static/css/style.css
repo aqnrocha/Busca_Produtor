@@ -1,0 +1,63 @@
+@font-face {
+    font-family: Helvetica;
+}
+
+h1 {
+    font-family: Helvetica;
+    border: 2px #eee solid;
+    color: #ffff;
+    text-align: center;
+    padding: 10px;
+    background: #006400;
+}
+h2 {
+    font-family: Helvetica;
+    border: 1px #eee solid;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+input {
+    font-family: Helvetica;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 420px;
+    height: 45px;
+    border-radius: 20px;
+    border: 4px solid #00000;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+    box-shadow: 4px 4px 0px #000000;
+}
+button {
+    font-family: Helvetica;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 420px;
+    height: 55px;
+    border-radius: 20px;
+    border: 4px solid #00000;
+    text-align: center;
+    background-color: #006400;
+    color: #FFF;
+    font-size: 20px;
+    box-shadow: 4px 4px 0px #000000;
+}
+button:hover {
+    transform: scale(1.05);
+}
+table{
+    font-family: Helvetica;
+    font-size: 20px;
+	text-align: center;
+	width: 75%;
+	border-collapse: collapse;
+	margin: auto;
+	min-width: 500px;
+	margin-top: 100px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
