@@ -1,10 +1,11 @@
 from flask import Flask, render_template
 from flask.globals import request
-from seleniumwire import webdriver
+import undetected_chromedriver as uc
 from time import sleep
 from json import loads
 import pandas as pd
 from bs4 import BeautifulSoup as bs
+from recaptcha_solver import recaptcha_solver
 
 # Início
 app = Flask(__name__)
@@ -15,13 +16,16 @@ def homepage():
 
 def result():
     def pesquisar():
-        driver = webdriver.Edge()
+        opt = uc.ChromeOptions()
+        opt.add_argument('--headless')
+        driver = uc.Chrome(executable_path='/Busca_Produtor (Python)/chromedriver.exe', options=opt)
         driver.get('https://www.registrorural.com.br/accounts/login/?next=/')
+        sleep(1)
         email = 'everton.tec@manejebem.com'
         senha = 'RREve@123'
 
         # Login
-
+        sleep(1)
         campo_email = driver.find_element("css selector", "#id_login")
         sleep(1)
         campo_email.send_keys(email)
@@ -222,11 +226,11 @@ def result():
 
     # Renderizando DataFrame no html
     soup1 = bs(pesquisar(), "html.parser")
-    html = open("C:/Users/Bruno/Desktop/Busca_Produtor/templates/pesquisa.html", 'r', encoding='UTF-8')
+    html = open("/Busca_Produtor/templates/pesquisa.html", 'r', encoding='UTF-8')
     soup = bs(html, "html.parser")
     body = soup.body
     body.append(soup1)
-    resultado_html = open("C:/Users/Bruno/Desktop/Busca_Produtor/templates/resultado.html", "w",  encoding='UTF-8')
+    resultado_html = open("/Busca_Produtor/templates/resultado.html", "w",  encoding='UTF-8')
     resultado_html.write(str(soup.prettify()))
     return 'OK'
 
